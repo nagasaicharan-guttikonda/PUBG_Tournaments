@@ -1,0 +1,46 @@
+--- 
+services: 
+  angular: 
+    build: PubGUI/
+    container_name: angular-docker
+    image: pubg-angular-image
+    network_mode: host
+    ports: 
+      - "4200:4200"
+  mysql: 
+    environment: 
+      MYSQL_DATABASE: pubg_tournaments
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root123
+    image: "mysql:5.5"
+    network_mode: host
+    ports: 
+      - "3306:3306"
+    restart: always
+  spring: 
+    build: favouriteservice/
+    depends_on: 
+      - mysql
+    expose: 
+      - "8089"
+    image: pubg-spring-image
+    network_mode: host
+    ports: 
+      - "8089:8089"
+    restart: always
+  user-app: 
+    build: userservice/
+    depends_on: 
+      - mysql
+    expose: 
+      - 8082
+    image: pubg-user-app
+    network_mode: host
+    ports: 
+      - "8082:8082"
+    restart: always
+version: "3"
+
+
+

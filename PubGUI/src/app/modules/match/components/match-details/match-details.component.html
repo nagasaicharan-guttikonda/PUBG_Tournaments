@@ -1,0 +1,23 @@
+<h2 class="header"><br> details of {{match?.data.attributes.titleId}}<br></h2> -->
+<div class="container">
+  <mat-card class="thumbnail"  >
+    <mat-card-header class="match-header" >
+        <mat-card-title>Title: <small>{{match?.data.attributes.titleId}}</small></mat-card-title>
+        <mat-card-subtitle>Date: <small>{{match?.data.attributes.createdAt}}</small> </mat-card-subtitle>
+    </mat-card-header>
+    <img class="image" mat-card-image  src="https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/11/05/Photos/Processed/pubg-k23G--621x414@LiveMint.jpg">
+    <mat-card-content  class="overview">
+        Game Mode : <small>{{match?.data.attributes?.gameMode}}</small>
+        <br>
+        Map Name  : <small>{{match?.data.attributes?.mapName}}</small>
+        <br>
+        Duration  : <small>{{match?.data.attributes?.duration}}</small>
+  </mat-card-content>
+    
+    <mat-card-actions class="actions" >
+        <button  mat-raised-button color="primary" class="addButton" (click)="addToFavouriteList()">Add to Favouritelist</button>
+    </mat-card-actions>
+
+
+  </mat-card>
+  </div>

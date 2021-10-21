@@ -1,0 +1,22 @@
+<h2 class="header"><br> Here is your favourites list<br></h2>
+<div class="container">
+  <mat-card class="thumbnail" *ngFor="let match of matches" >
+    <mat-card-header class="match-header" >
+        <mat-card-title >Title: <small>{{match.titleId}}</small></mat-card-title>
+        <mat-card-subtitle>Date: <small>{{match.createdAt}}</small> </mat-card-subtitle>
+    </mat-card-header>
+    <img class="match-image" mat-card-image  src="https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/11/05/Photos/Processed/pubg-k23G--621x414@LiveMint.jpg">
+    <mat-card-content *ngIf="!useFavouritelistApi" class="overview">
+        Game Mode: <small>{{match.gameMode}}</small>
+        <br>
+        Map Name: <small>{{match.mapName}}</small>
+       
+  </mat-card-content>
+    
+    <mat-card-actions class="actions" >
+        <button  mat-raised-button color="primary" class="addButton" (click)="deleteFromFavouriteList(match)">Delete from Favouritelist</button>
+    </mat-card-actions>
+
+
+  </mat-card>
+  </div>

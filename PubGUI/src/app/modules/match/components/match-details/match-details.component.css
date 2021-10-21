@@ -1,0 +1,48 @@
+.header{
+    text-align: center;
+    color:white;
+    background-color:gray;
+    margin-block-start: 0em !important;
+    margin-block-end: 0em !important;
+    
+}
+
+.container {
+    align-content: center;
+
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    overflow-y:auto;
+    overflow-x:auto;
+
+  }
+
+  .thumbnail{
+    height:430px;
+    width: 250px;
+    margin: 10px;
+    background-color: blanchedalmond;
+}
+
+.match-header{
+    height: 100px;
+}
+
+.image{
+    height: 230px;
+    margin-top:-10%;
+}
+.overview{
+    height: 40px;
+}
+
+.actions{
+   text-align: right;
+   margin-bottom: 150%;
+}
+
+
+
+

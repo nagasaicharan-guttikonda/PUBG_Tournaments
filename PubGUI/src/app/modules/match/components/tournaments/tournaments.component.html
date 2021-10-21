@@ -1,0 +1,17 @@
+<h1 class="header"><br>TOURNAMENTS<br></h1>
+
+<div class="container">
+<mat-card class="thumbnail" *ngFor="let tournament of tournaments">
+  <mat-card-header class="match-header">
+      <mat-card-title >Id: <small>{{tournament?.id}}</small></mat-card-title>
+      <mat-card-subtitle>Date: <small>{{tournament?.attributes?.createdAt}}</small> </mat-card-subtitle>
+  </mat-card-header>
+  <img class="image" mat-card-image  src="http://www.gameblog.in/wp-content/uploads/2018/11/PUBG-Inlay-780x405.jpg">
+  
+  <mat-card-actions class="actions">
+      <button  mat-raised-button color="primary" class="addButton" [routerLink]="['../matches', tournament.id ]">DETAILS</button>
+     
+  </mat-card-actions>
+</mat-card>
+</div>
+
